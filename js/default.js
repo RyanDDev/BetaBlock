@@ -21,7 +21,8 @@ const output = document.getElementById("bool-output");
 
 load.addEventListener("click", function(){
     /*Box ONE */
-    box1 = ta1.value;
+    var box1 = ta1.value;
+    if (box1 != ""){
     var bool1="";
     var box1List = box1.split(",");
     for ( let i=0; i<box1List.length ;i++){
@@ -43,17 +44,21 @@ load.addEventListener("click", function(){
 
 
     };
-    console.log(bool1);
+    console.log(bool1);}
+    else{
+        var bool1 ="";
+    };
 
     /**BOX TWO */
-    box2 = ta2.value;
+    var box2 = ta2.value;
+    if (box2 != ""){
     var bool2="";
     var box2List = box2.split(",");
     for ( let i=0; i<box2List.length ;i++){
         const keyword = box2List[i];
         console.log(keyword);
         if (i==0){
-            bool2 = `("${keyword}" OR `  ;
+            bool2 = ` AND ("${keyword}" OR `  ;
             console.log("zero");
 
         }
@@ -68,17 +73,21 @@ load.addEventListener("click", function(){
 
 
     };
-    console.log(bool2);
+    console.log(bool2);}
+    else{
+        var bool2 ="";
+    };
 
         /**BOX THREE */
-        box3 = ta3.value;
+        var box3 = ta3.value;
+        if (box3 != ""){
         var bool3="";
         var box3List = box3.split(",");
         for ( let i=0; i<box3List.length ;i++){
             const keyword = box3List[i];
             console.log(keyword);
             if (i==0){
-                bool3 = `("${keyword}" OR `  ;
+                bool3 = ` AND ("${keyword}" OR `  ;
                 console.log("zero");
     
             }
@@ -94,16 +103,22 @@ load.addEventListener("click", function(){
     
         };
         console.log(bool3);
+    }
+    else{
+        var bool3 ="";
+    };
 
             /**BOX FOUR */
-            box4 = ta4.value;
+            var box4 = ta4.value;
+            if (box4 != ""){
+            
             var bool4="";
             var box4List = box4.split(",");
             for ( let i=0; i<box4List.length ;i++){
                 const keyword = box4List[i];
                 console.log(keyword);
                 if (i==0){
-                    bool4 = `("${keyword}" OR `  ;
+                    bool4 = ` AND ("${keyword}" OR `  ;
                     console.log("zero");
         
                 }
@@ -119,9 +134,14 @@ load.addEventListener("click", function(){
         
             };
             console.log(bool4);
+        }
+        else{
+            var bool4 ="";
+        };
 
         /**COMBINE */
-        var booleanStr = bool1 + " AND " + bool2 + " AND " + bool3 + " AND " + bool4;
+        
+        var booleanStr = bool1 + bool2 +  bool3 + bool4;
         console.log(booleanStr);
 
         output.value = booleanStr;
@@ -132,4 +152,5 @@ load.addEventListener("click", function(){
 
     
 });
+
 
