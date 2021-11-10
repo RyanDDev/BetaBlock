@@ -133,10 +133,3 @@ load.addEventListener("click", function(){
     
 });
 
-
-/**india, england, ireland, scotland */
-/**construction , bruhmoments , coding */
-
-/**swag , pussy , leg, jegg */
-
-/**this,is,a,text */
